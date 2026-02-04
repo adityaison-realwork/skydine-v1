@@ -18,7 +18,7 @@ const Home: React.FC = () => {
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
-    document.querySelectorAll('.reveal-text, .reveal-img-container, .fade-up, .draw-line').forEach((el) => {
+    document.querySelectorAll('.reveal-text, .reveal-lux, .fade-up, .draw-line').forEach((el) => {
       observer.observe(el);
     });
 
@@ -120,13 +120,13 @@ const Home: React.FC = () => {
       <section className="py-32 px-6 md:px-20 max-w-[1600px] mx-auto relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
-            {/* Image Composition */}
+            {/* Image Composition - Using enhanced lux reveal */}
             <div className="relative group">
-                <div className="reveal-img-container aspect-[3/4] md:aspect-[4/5] overflow-hidden border border-white/5">
+                <div className="reveal-lux aspect-[3/4] md:aspect-[4/5] overflow-hidden border border-white/5 bg-white/5 shadow-2xl">
                     <img 
                         src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" 
                         alt="Interior" 
-                        className="reveal-img-inner w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000"
+                        className="reveal-lux-inner w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000"
                     />
                 </div>
                 {/* Floating Badge */}
@@ -180,19 +180,19 @@ const Home: React.FC = () => {
                 <div className="w-[1px] h-12 bg-white/10 mx-auto mt-8"></div>
             </div>
 
-            {/* Cards - Sized Down for Luxury */}
+            {/* Cards - Enhanced lux reveal staggered */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                     { title: "The Tandoor", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=1500&auto=format&fit=crop", desc: "Smoked & Charred" },
                     { title: "The Wok", img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=1469&auto=format&fit=crop", desc: "Steam & Spice" },
                     { title: "The Spirits", img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1469&auto=format&fit=crop", desc: "Mocktails & Elixirs" }
                 ].map((item, idx) => (
-                    <Link to="/menu" key={idx} className="group relative block w-full max-w-sm mx-auto md:max-w-none reveal-img-container overflow-hidden h-[400px] md:h-[500px]" style={{ transitionDelay: `${idx * 0.2}s` }}>
+                    <Link to="/menu" key={idx} className="group relative block w-full max-w-sm mx-auto md:max-w-none reveal-lux overflow-hidden h-[400px] md:h-[500px]" style={{ transitionDelay: `${idx * 0.2}s` }}>
                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
                         <img 
                             src={item.img} 
                             alt={item.title} 
-                            className="reveal-img-inner w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                            className="reveal-lux-inner w-full h-full object-cover transition-transform duration-[1.5s] ease-out"
                         />
                         
                         {/* Elegant Overlay */}
@@ -256,7 +256,8 @@ const Home: React.FC = () => {
                 </Link>
             </div>
             
-            <div className="relative h-[400px] w-full bg-white/5 reveal-img-container order-1 lg:order-2 border border-white/10 group">
+            {/* Maps iframe reveal enhanced */}
+            <div className="relative h-[400px] w-full bg-white/5 reveal-lux order-1 lg:order-2 border border-white/10 group shadow-2xl">
                 <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-[#D6AD60] opacity-50 z-20"></div>
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#D6AD60] opacity-50 z-20"></div>
                 
