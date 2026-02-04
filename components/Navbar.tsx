@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
             
             {/* Navigation Links */}
             <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-6 md:pl-24 lg:pl-32 relative">
-                <nav className="flex flex-col space-y-4 md:space-y-6">
+                <nav className="flex flex-col space-y-2 md:space-y-4">
                     {navLinks.map((link, idx) => (
                         <div 
                             key={link.name}
@@ -110,15 +110,15 @@ const Navbar: React.FC = () => {
                         >
                             <Link
                                 to={link.path}
-                                className={`group flex items-center gap-6 transform transition-transform duration-700 cubic-bezier(0.2, 1, 0.3, 1) ${
+                                className={`group flex items-center gap-6 transform transition-all duration-700 cubic-bezier(0.2, 1, 0.3, 1) ${
                                     isOpen ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                                 }`}
                                 style={{ transitionDelay: `${100 + (idx * 50)}ms` }}
                             >
-                                <span className="font-mono text-xs text-[#D6AD60] opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2">
+                                <span className="font-mono text-xs text-[#D6AD60] opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2 w-6">
                                     {link.label}
                                 </span>
-                                <span className="font-cinzel text-5xl md:text-7xl lg:text-8xl text-transparent text-stroke group-hover:text-stroke-gold group-hover:text-[#D6AD60]/10 transition-all duration-500 uppercase tracking-tighter">
+                                <span className="font-cinzel text-4xl md:text-6xl lg:text-7xl text-white/70 group-hover:text-[#D6AD60] group-hover:translate-x-4 group-hover:scale-105 transition-all duration-500 uppercase tracking-tighter">
                                     {link.name}
                                 </span>
                             </Link>
