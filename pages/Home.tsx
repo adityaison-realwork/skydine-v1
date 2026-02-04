@@ -10,16 +10,41 @@ const Home: React.FC = () => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+    const revealTargets = Array.from(
+      document.querySelectorAll('.reveal-text, .reveal-img-container, .fade-up, .draw-line')
+    );
 
-    document.querySelectorAll('.reveal-text, .reveal-img-container, .fade-up, .draw-line').forEach((el) => {
+    const revealVisibleTargets = () => {
+      revealTargets.forEach((el) => el.classList.add('visible'));
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      revealVisibleTargets();
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    revealTargets.forEach((el) => {
       observer.observe(el);
+    });
+
+    revealTargets.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
     });
 
     return () => {
