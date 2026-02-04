@@ -5,7 +5,7 @@ export const RESTAURANT_INFO = {
   phone: ["+91 72288 85060", "+91 99099 22299"],
   hours: "Monday - Sunday: 11:00 AM – 11:00 PM",
   description: "A premier rooftop dining experience in Vadodara offering a multi-cuisine menu with a focus on North Indian, Chinese, Continental, and Pan-Asian delicacies. Known for its open-air ambiance, panoramic city views, and glass dome seating.",
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.076362947137!2d73.1368!3d22.3135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8e4c1b5b5b5%3A0x123456789abcdef!2sSky%20Dine%20Restaurant%2C%20Florence%20Excellence!5e0!3m2!1sen!2sin!4v1610000000000!5m2!1sen!2sin"
+  mapEmbedUrl: "https://www.google.com/maps?output=embed&q=Sky%20Dine%20Restaurant%20Florence%20Excellence%20Vadodara"
 };
 
 export const SOCIAL_LINKS = [
